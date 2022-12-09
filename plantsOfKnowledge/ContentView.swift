@@ -6,16 +6,36 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            MapView()
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
+            
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -129.974)
+
+            VStack(alignment: .center) {
+                Text("Arbol SuperGenial y Cool :)")
+                    .bold()
+                    .padding()
+                    .font(.system(size: 25))
+
+                VStack {
+                    Text("Tec de Monterrey, Campus Sonora Norte")
+                    Text("Hermosillo, Sonora")
+                        .font(.subheadline)
+                }
+            }
+            .padding()
+            Spacer()
         }
-        .padding()
+        .background(Color("AccentColor"))
     }
 }
 

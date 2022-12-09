@@ -14,6 +14,8 @@
 		848F1D4D2942C7D1004810BC /* plantsOfKnowledgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D4C2942C7D1004810BC /* plantsOfKnowledgeTests.swift */; };
 		848F1D572942C7D1004810BC /* plantsOfKnowledgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D562942C7D1004810BC /* plantsOfKnowledgeUITests.swift */; };
 		848F1D592942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D582942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift */; };
+		848F1D662942DF6D004810BC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D652942DF6D004810BC /* MapView.swift */; };
+		848F1D682942E014004810BC /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D672942E014004810BC /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		848F1D522942C7D1004810BC /* plantsOfKnowledgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = plantsOfKnowledgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F1D562942C7D1004810BC /* plantsOfKnowledgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantsOfKnowledgeUITests.swift; sourceTree = "<group>"; };
 		848F1D582942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantsOfKnowledgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		848F1D652942DF6D004810BC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		848F1D672942E014004810BC /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		848F1D3A2942C7CF004810BC /* plantsOfKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				848F1D672942E014004810BC /* CircleImage.swift */,
+				848F1D652942DF6D004810BC /* MapView.swift */,
 				848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */,
 				848F1D3D2942C7CF004810BC /* ContentView.swift */,
 				848F1D3F2942C7D0004810BC /* Assets.xcassets */,
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				848F1D3E2942C7CF004810BC /* ContentView.swift in Sources */,
+				848F1D682942E014004810BC /* CircleImage.swift in Sources */,
+				848F1D662942DF6D004810BC /* MapView.swift in Sources */,
 				848F1D3C2942C7CF004810BC /* plantsOfKnowledgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
