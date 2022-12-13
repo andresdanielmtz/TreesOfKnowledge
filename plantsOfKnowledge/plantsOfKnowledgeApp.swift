@@ -12,7 +12,7 @@ import SwiftUI
 struct plantsOfKnowledgeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            listMenu()
         }
     }
 }

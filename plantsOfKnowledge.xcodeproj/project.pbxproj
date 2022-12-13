@@ -16,6 +16,11 @@
 		848F1D592942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D582942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift */; };
 		848F1D662942DF6D004810BC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D652942DF6D004810BC /* MapView.swift */; };
 		848F1D682942E014004810BC /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D672942E014004810BC /* CircleImage.swift */; };
+		848F1D6A29469E73004810BC /* listMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D6929469E73004810BC /* listMenu.swift */; };
+		848F1D6E2946CE44004810BC /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 848F1D6D2946CE44004810BC /* menu.json */; };
+		848F1D712946D145004810BC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D6F2946D145004810BC /* Menu.swift */; };
+		848F1D722946D145004810BC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D702946D145004810BC /* Helper.swift */; };
+		848F1D772947FC89004810BC /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848F1D762947FC89004810BC /* WikipediaKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,10 @@
 		848F1D582942C7D1004810BC /* plantsOfKnowledgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantsOfKnowledgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		848F1D652942DF6D004810BC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		848F1D672942E014004810BC /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		848F1D6929469E73004810BC /* listMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listMenu.swift; sourceTree = "<group>"; };
+		848F1D6D2946CE44004810BC /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		848F1D6F2946D145004810BC /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		848F1D702946D145004810BC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848F1D772947FC89004810BC /* WikipediaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +108,10 @@
 		848F1D3A2942C7CF004810BC /* plantsOfKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				848F1D6F2946D145004810BC /* Menu.swift */,
+				848F1D702946D145004810BC /* Helper.swift */,
+				848F1D6D2946CE44004810BC /* menu.json */,
+				848F1D6929469E73004810BC /* listMenu.swift */,
 				848F1D672942E014004810BC /* CircleImage.swift */,
 				848F1D652942DF6D004810BC /* MapView.swift */,
 				848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */,
@@ -149,6 +163,9 @@
 			dependencies = (
 			);
 			name = plantsOfKnowledge;
+			packageProductDependencies = (
+				848F1D762947FC89004810BC /* WikipediaKit */,
+			);
 			productName = plantsOfKnowledge;
 			productReference = 848F1D382942C7CF004810BC /* plantsOfKnowledge.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +238,9 @@
 				Base,
 			);
 			mainGroup = 848F1D2F2942C7CF004810BC;
+			packageReferences = (
+				848F1D752947FC89004810BC /* XCRemoteSwiftPackageReference "WikipediaKit" */,
+			);
 			productRefGroup = 848F1D392942C7CF004810BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848F1D6E2946CE44004810BC /* menu.json in Resources */,
 				848F1D432942C7D0004810BC /* Preview Assets.xcassets in Resources */,
 				848F1D402942C7D0004810BC /* Assets.xcassets in Resources */,
 			);
@@ -265,8 +286,11 @@
 			files = (
 				848F1D3E2942C7CF004810BC /* ContentView.swift in Sources */,
 				848F1D682942E014004810BC /* CircleImage.swift in Sources */,
+				848F1D712946D145004810BC /* Menu.swift in Sources */,
 				848F1D662942DF6D004810BC /* MapView.swift in Sources */,
 				848F1D3C2942C7CF004810BC /* plantsOfKnowledgeApp.swift in Sources */,
+				848F1D6A29469E73004810BC /* listMenu.swift in Sources */,
+				848F1D722946D145004810BC /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +609,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		848F1D752947FC89004810BC /* XCRemoteSwiftPackageReference "WikipediaKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Raureif/WikipediaKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		848F1D762947FC89004810BC /* WikipediaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848F1D752947FC89004810BC /* XCRemoteSwiftPackageReference "WikipediaKit" */;
+			productName = WikipediaKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 848F1D302942C7CF004810BC /* Project object */;
 }

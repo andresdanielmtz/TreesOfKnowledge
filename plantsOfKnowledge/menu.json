@@ -1,0 +1,41 @@
+[ 
+	{
+        "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
+		"name": "🌳 Arboles",
+		"items": [
+            {
+                            "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
+                            "name": "Palo Verde",
+                            "photoCredit": "Joseph Gonzalez",
+                            "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/0/0d/Starr_010209-0260_Parkinsonia_aculeata.jpg",
+                            "scientific_name":"Parkinsonia aculeata",
+                            "wikipedia_entry": "https://es.wikipedia.org/wiki/Parkinsonia_aculeata",
+                            "price": 6,
+                            "restrictions": ["G", "V"],
+                            "description": "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…"
+                            
+                        },
+		]
+	},
+	{
+		"name": "🪴 Arbustos",
+        "id": "3D97FAB4-50AC-40FC-9BF0-3F46BB6A92F5",
+		"items": [
+
+		]
+	},
+	{
+		"name": "🌱 Plantas",
+        "id": "1C89DAFD-7653-4EF2-BF20-C51A159BAC43",
+		"items": [
+			
+		]
+	},
+	{
+		"name": "🌻 Flores",
+        "id": "CE3C67F9-79E3-46E3-B134-362A52ABFE3C",
+		"items": [
+			
+		]
+	}
+]

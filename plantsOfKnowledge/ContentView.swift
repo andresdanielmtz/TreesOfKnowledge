@@ -7,29 +7,40 @@
 
 import SwiftUI
 import MapKit
+import Foundation
+
 
 struct ContentView: View {
-
+    let plant: String;
+    let scientific_name: String;
+    let imgUrl: String;
+    let wiki: String;
+    
     var body: some View {
+    
         VStack {
             MapView()
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CircleImage()
+            CircleImage(imag: imgUrl)
                 .offset(y: -130)
                 .padding(.bottom, -129.974)
 
             VStack(alignment: .center) {
-                Text("Arbol SuperGenial y Cool :)")
+                Text(plant)
                     .bold()
-                    .padding()
                     .font(.system(size: 25))
 
+                Text(scientific_name)
+                    .italic()
+                    .padding(.bottom)
                 VStack {
-                    Text("Tec de Monterrey, Campus Sonora Norte")
-                    Text("Hermosillo, Sonora")
+                    Text("School Name")
+                    Text("City, State")
                         .font(.subheadline)
+                    Spacer();
+                    Link("Wikipedia Entry", destination: URL(string: wiki)!)
                 }
             }
             .padding()
@@ -41,6 +52,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(plant: "", scientific_name:"", imgUrl: "", wiki: "")
     }
 }
