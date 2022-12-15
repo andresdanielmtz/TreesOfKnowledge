@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct plantsOfKnowledgeApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup { // where to start
             listMenu()
         }
     }

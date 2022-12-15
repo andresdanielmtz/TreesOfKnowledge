@@ -17,7 +17,7 @@ struct ContentView: View {
     let wiki: String;
     
     var body: some View {
-    
+        
         VStack {
             MapView()
                 .ignoresSafeArea(edges: .top)
