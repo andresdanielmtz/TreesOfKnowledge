@@ -7,6 +7,7 @@
 
 import UIKit
 
+/*
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
@@ -26,3 +27,4 @@ extension Bundle {
         return loaded
     }
 }
+*/ 

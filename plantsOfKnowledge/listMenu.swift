@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftyJSON
+import Files
 
 /*
 struct Item: Codable, Hashable, Identifiable {
@@ -54,51 +56,144 @@ class Logger {
     }
 }
 
+func appendToJSONFile(json: JSON) {
+    let path = NSHomeDirectory() + "/Documents/menu.json"
+    do {
+        let fileContents = try String(contentsOfFile: path)
+        let modifiedContents = fileContents.replacingOccurrences(of: "]", with: "\(json.rawString()!),\n]")
+        try modifiedContents.write(toFile: path, atomically: true, encoding: .utf8)
+    } catch {
+        print(error)
+    }
+}
+
 func getDocumentsDirectory() -> URL {
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     let documentsDirectory = paths[0]
     return documentsDirectory
 }
 
-let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
-struct listMenu: View {
-    @State var showAddElement = true;
-    // /Users/autummata/Desktop/xcode/plantsOfKnowledge/plantsOfKnowledge/plantsOfKnowledge
-    // changeCurrentDirectoryPath("/Users/autummata/Desktop/xcode/plantsOfKnowledge/plantsOfKnowledge/plantsOfKnowledge")
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(menu) { section in
-                    Section(section.name) { // show sections
-                        ForEach(section.items) { item in
-                            NavigationLink(destination: ContentView(plant: item.name, scientific_name: item.scientific_name, imgUrl: item.imgUrl, wiki: item.wikipedia_entry)) { // show items
-                                Button(action: {
-                                    print(":D")
-                                }) {
-                                    Text(item.name)
-                                        .foregroundColor(.black)
-                                }
-                            }
-                        }
-                    }
-                }
-                Button("Add element", action: {
-                    // addToMenu(name: "Daigo", price: 20);
-                    Logger.log("fuuu")
-                    print(getDocumentsDirectory())
-                })
+func readJsonFile() -> [String: Any] {
+    let path = Bundle.main.path(forResource: "menu", ofType: "json")
+    let url = URL(fileURLWithPath: path!)
+    let data = try! Data(contentsOf: url)
+    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+    return json
+}
+
+class JSONWriter: UIResponder, UIApplicationDelegate { // when closing app, must look into it
+    var it = Menu()
+    func applicationWillTerminate(_ application: UIApplication) {
+        do {
+            let json: [String: Any] = ["menuItems": it.menuItems.map { $0.toJSON() }]
+            let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            if let fileURL = Bundle.main.url(forResource: "data", withExtension: "json") {
+                try data.write(to: fileURL)
             }
-            .navigationBarTitle(Text("Secciones"))
-            .listStyle(GroupedListStyle())
-            
-            
+        } catch {
+            print("Error writing to JSON file: \(error)")
         }
     }
 }
 
 
-struct listMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        listMenu()
+class Menu: ObservableObject {
+    @Published var menuItems: [MenuItem] = []
+
+    init() {
+        loadMenu()
+    }
+
+    func loadMenu() {
+        let fileName = "Documents/menu.json"
+        let homeDirectory = NSHomeDirectory()
+        let fileURL = URL(fileURLWithPath: homeDirectory).appendingPathComponent(fileName)
+
+        let data = try! Data(contentsOf: fileURL)
+        let decoder = JSONDecoder()
+        menuItems = try! decoder.decode([MenuItem].self, from: data)
+        print(":D")
+    }
+
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        do {
+            let json: [String: Any] = ["menuItems": menuItems.map { $0.toJSON() }]
+            let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            if let fileURL = Bundle.main.url(forResource: "menu", withExtension: "json") {
+                try data.write(to: fileURL)
+            }
+        } catch {
+            print("Error writing to JSON file: \(error)")
+        }
+    }
+    
+    func addElement(element: MenuItem) {
+            // Add the element to the data property and update the JSON file
+            menuItems.append(element)
+            do {
+                let json: [String: Any] = ["menuItems": menuItems.map { $0.toJSON() }]
+                let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                if let fileURL = Bundle.main.url(forResource: "menu", withExtension: "json") {
+                    try data.write(to: fileURL)
+                }
+            } catch {
+                print("Error writing to JSON file: \(error)")
+            }
+        }
+}
+
+
+// let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
+struct listMenu: View {
+    @ObservedObject var menuItems = Menu()
+    @State var x = -1
+
+    var body: some View {
+        NavigationStack {
+            List(menuItems.menuItems, id: \.self) { menuItem in
+                    NavigationLink(destination: ContentView(plant: menuItem.name, scientific_name: menuItem.scientific_name, imgUrl: menuItem.imgUrl, wiki: menuItem.wikipedia_entry))
+                    {
+                        Text(menuItem.name)
+                        // Text("\(x)")
+                }
+            }
+            .navigationTitle("Arboles")
+            .onAppear {
+                x += 1
+                self.menuItems.loadMenu()
+            }
+            
+            // .onAppear(perform: loadData)
+            
+            Text("You have clicked this \(x) times.")
+            Button("test", action: {
+                
+                // Example JSONs, to be changed.
+                
+                let v = JSON(["id": UUID().uuidString, "name": "Arbol", "photoCredit": "Joseph Gonzalez", "imgUrl": "", "scientific_name": "", "wikipedia_entry": "https://en.wikipedia.org/wiki/Hamburger", "price": 6, "description": "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…"])
+                    
+                let y = MenuItem(id: UUID().uuidString, name: "Arbol", photoCredit: "Joseph Gonzalez", imgUrl: "", scientific_name: "", wikipedia_entry: "https://en.wikipedia.org/wiki/Hamburger", price: 6, description: "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…")
+                
+                appendToJSONFile(json: v)
+                self.menuItems.addElement(element: y)
+                x += 1
+                print("Does this even work?")
+            })
+        }
+    }
+    /*
+    func loadData() {
+        let url = Bundle.main.url(forResource: "menu", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        menuItems = try! decoder.decode([MenuItem].self, from: data)
+        print(":D")
+    }
+    */ 
+    struct listMenu_Previews: PreviewProvider {
+        static var previews: some View {
+            listMenu()
+        }
     }
 }

@@ -11,7 +11,7 @@
         "description": "A delicious pizza made with tomato sauce, mozzarella cheese, and fresh basil."
     },
     {
-        "id": "isodjfoisdjfoisdj",
+        "id": "lol",
         "name": "Hamburger",
         "photoCredit": "Jane Doe",
         "imgUrl": "https://example.com/hamburger.jpg",
@@ -23,7 +23,7 @@
     },
     {
         "id": "lol",
-        "name": "haaa",
+        "name": "Hamburr",
         "photoCredit": "Jane Doe",
         "imgUrl": "https://example.com/hamburger.jpg",
         "scientific_name": "Hamburglar",
@@ -31,28 +31,6 @@
         "price": 2,
         "restrictions": [],
         "description": "A juicy hamburger served with lettuce, tomato, and onion."
-    },
-    {
-        "id": "woahowwaisjdiasd",
-        "name": "EHHHH",
-        "photoCredit": "Jane Doe",
-        "imgUrl": "https://example.com/hamburger.jpg",
-        "scientific_name": "Hamburglar",
-        "wikipedia_entry": "https://en.wikipedia.org/wiki/Hamburger",
-        "price": 2,
-        "restrictions": [],
-        "description": "A juicy hamburger served with lettuce, tomato, and onion."
-    },
-    {
-        "id": "tsukinokaori",
-        "name": "EHHHH",
-        "photoCredit": "Jane Doe",
-        "imgUrl": "https://example.com/hamburger.jpg",
-        "scientific_name": "Hamburglar",
-        "wikipedia_entry": "https://en.wikipedia.org/wiki/Hamburger",
-        "price": 2,
-        "restrictions": [],
-        "description": "A juicy hamburger served with lettuce, tomato, and onion."
-    },
+    }
 ]
 

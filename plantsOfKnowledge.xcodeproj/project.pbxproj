@@ -24,6 +24,8 @@
 		84C93AF5294B9ECD00F7AF4F /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF4294B9ECC00F7AF4F /* example.txt */; };
 		84C93AF8294BEDC400F7AF4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF7294BEDC400F7AF4F /* README.md */; };
 		84C93AFA294BF02000F7AF4F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF9294BF02000F7AF4F /* .gitignore */; };
+		84C93AFD294C10F000F7AF4F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 84C93AFC294C10F000F7AF4F /* SwiftyJSON */; };
+		84C93B00294C115A00F7AF4F /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 84C93AFF294C115A00F7AF4F /* Files */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C93B00294C115A00F7AF4F /* Files in Frameworks */,
+				84C93AFD294C10F000F7AF4F /* SwiftyJSON in Frameworks */,
 				848F1D772947FC89004810BC /* WikipediaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +178,8 @@
 			name = plantsOfKnowledge;
 			packageProductDependencies = (
 				848F1D762947FC89004810BC /* WikipediaKit */,
+				84C93AFC294C10F000F7AF4F /* SwiftyJSON */,
+				84C93AFF294C115A00F7AF4F /* Files */,
 			);
 			productName = plantsOfKnowledge;
 			productReference = 848F1D382942C7CF004810BC /* plantsOfKnowledge.app */;
@@ -249,6 +255,8 @@
 			mainGroup = 848F1D2F2942C7CF004810BC;
 			packageReferences = (
 				848F1D752947FC89004810BC /* XCRemoteSwiftPackageReference "WikipediaKit" */,
+				84C93AFB294C10F000F7AF4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				84C93AFE294C115A00F7AF4F /* XCRemoteSwiftPackageReference "Files" */,
 			);
 			productRefGroup = 848F1D392942C7CF004810BC /* Products */;
 			projectDirPath = "";
@@ -631,6 +639,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		84C93AFB294C10F000F7AF4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		84C93AFE294C115A00F7AF4F /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Files";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -638,6 +662,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 848F1D752947FC89004810BC /* XCRemoteSwiftPackageReference "WikipediaKit" */;
 			productName = WikipediaKit;
+		};
+		84C93AFC294C10F000F7AF4F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C93AFB294C10F000F7AF4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		84C93AFF294C115A00F7AF4F /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C93AFE294C115A00F7AF4F /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
