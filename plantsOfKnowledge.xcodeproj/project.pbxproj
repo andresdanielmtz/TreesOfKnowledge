@@ -21,8 +21,9 @@
 		848F1D712946D145004810BC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D6F2946D145004810BC /* Menu.swift */; };
 		848F1D722946D145004810BC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D702946D145004810BC /* Helper.swift */; };
 		848F1D772947FC89004810BC /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848F1D762947FC89004810BC /* WikipediaKit */; };
-		84C93AF3294B9E8500F7AF4F /* plants.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF2294B9E8500F7AF4F /* plants.png */; };
 		84C93AF5294B9ECD00F7AF4F /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF4294B9ECC00F7AF4F /* example.txt */; };
+		84C93AF8294BEDC400F7AF4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF7294BEDC400F7AF4F /* README.md */; };
+		84C93AFA294BF02000F7AF4F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF9294BF02000F7AF4F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +60,9 @@
 		848F1D6D2946CE44004810BC /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		848F1D6F2946D145004810BC /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		848F1D702946D145004810BC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		84C93AF2294B9E8500F7AF4F /* plants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plants.png; path = plantsOfKnowledge/plants.png; sourceTree = "<group>"; };
 		84C93AF4294B9ECC00F7AF4F /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
-		84C93AF6294BEC7200F7AF4F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84C93AF7294BEDC400F7AF4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84C93AF9294BF02000F7AF4F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +94,8 @@
 		848F1D2F2942C7CF004810BC = {
 			isa = PBXGroup;
 			children = (
-				84C93AF2294B9E8500F7AF4F /* plants.png */,
+				84C93AF9294BF02000F7AF4F /* .gitignore */,
+				84C93AF7294BEDC400F7AF4F /* README.md */,
 				848F1D3A2942C7CF004810BC /* plantsOfKnowledge */,
 				848F1D4B2942C7D1004810BC /* plantsOfKnowledgeTests */,
 				848F1D552942C7D1004810BC /* plantsOfKnowledgeUITests */,
@@ -125,7 +127,6 @@
 				848F1D3D2942C7CF004810BC /* ContentView.swift */,
 				848F1D3F2942C7D0004810BC /* Assets.xcassets */,
 				848F1D412942C7D0004810BC /* Preview Content */,
-				84C93AF6294BEC7200F7AF4F /* README.md */,
 			);
 			path = plantsOfKnowledge;
 			sourceTree = "<group>";
@@ -265,11 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C93AF8294BEDC400F7AF4F /* README.md in Resources */,
 				848F1D6E2946CE44004810BC /* menu.json in Resources */,
 				848F1D432942C7D0004810BC /* Preview Assets.xcassets in Resources */,
 				84C93AF5294B9ECD00F7AF4F /* example.txt in Resources */,
+				84C93AFA294BF02000F7AF4F /* .gitignore in Resources */,
 				848F1D402942C7D0004810BC /* Assets.xcassets in Resources */,
-				84C93AF3294B9E8500F7AF4F /* plants.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

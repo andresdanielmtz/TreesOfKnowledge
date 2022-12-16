@@ -60,9 +60,6 @@ func getDocumentsDirectory() -> URL {
     return documentsDirectory
 }
 
-
-
-
 let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
 struct listMenu: View {
     @State var showAddElement = true;
@@ -89,11 +86,7 @@ struct listMenu: View {
                     // addToMenu(name: "Daigo", price: 20);
                     Logger.log("fuuu")
                     print(getDocumentsDirectory())
-
-                    
-
                 })
-
             }
             .navigationBarTitle(Text("Secciones"))
             .listStyle(GroupedListStyle())
