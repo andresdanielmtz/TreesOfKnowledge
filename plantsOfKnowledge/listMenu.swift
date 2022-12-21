@@ -9,22 +9,6 @@ import SwiftUI
 import SwiftyJSON
 import Files
 
-/*
-struct Item: Codable, Hashable, Identifiable {
-    var id: UUID
-    var name: String
-    var photoCredit: String
-    var imgUrl: String;
-    var scientific_name: String;
-    var wikipedia_entry: String;
-    var price: Int
-    var restrictions: [String]
-    var description: String
-    
-}
-*/
-
-
 func readMenuJson() { // Read original menu.json in the project's root folder and writes it in the NSHomeDirectory
     let fileManager = FileManager.default
     let documentsUrl =  fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
