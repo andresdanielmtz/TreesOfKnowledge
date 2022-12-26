@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftyJSON
 import Files
 
+
 func readMenuJson() { // Read original menu.json in the project's root folder and writes it in the NSHomeDirectory
     let fileManager = FileManager.default
     let documentsUrl =  fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -104,17 +105,22 @@ struct listMenu: View {
     var body: some View {
         NavigationStack {
             List(menuItems.menuItems, id: \.self) { menuItem in
-                    NavigationLink(destination: ContentView(plant: menuItem.name, scientific_name: menuItem.scientific_name, imgUrl: menuItem.imgUrl, wiki: menuItem.wikipedia_entry))
-                    {
-                        Text(menuItem.name)
-                        // Text("\(x)")
+                NavigationLink(destination: ContentView(plant: menuItem.name, scientific_name: menuItem.scientific_name, imgUrl: menuItem.imgUrl, wiki: menuItem.wikipedia_entry))
+                {
+                    Text(menuItem.name)
+                    // Text("\(x)")
                 }
             }
             .navigationTitle("Arboles")
             .onAppear {
                 self.menuItems.loadMenu()
             }
-            Text("There's no elements here...")
+            // Text("There's no elements here...")
+            // (Add later)
+            
+            NavigationLink(destination: addElementMenu()) {
+                Text("Testing Button.")
+            }
             // .onAppear(perform: loadData)
             
             Text("You have clicked this \(x) times.")

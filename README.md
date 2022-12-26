@@ -6,4 +6,4 @@ To run this project you *need* to use XCode.
 
 **To-do List:**
 - Add QR and HTTP Request support
-- (Optional) Add an [Add Element] view. 
+- Remove deprecated JSON elements. 

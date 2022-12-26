@@ -21,6 +21,7 @@
 		848F1D712946D145004810BC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D6F2946D145004810BC /* Menu.swift */; };
 		848F1D722946D145004810BC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D702946D145004810BC /* Helper.swift */; };
 		848F1D772947FC89004810BC /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848F1D762947FC89004810BC /* WikipediaKit */; };
+		84ACB2B62952BD0F00F75D28 /* AddElementMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACB2B52952BD0F00F75D28 /* AddElementMenu.swift */; };
 		84C93AF5294B9ECD00F7AF4F /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF4294B9ECC00F7AF4F /* example.txt */; };
 		84C93AF8294BEDC400F7AF4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF7294BEDC400F7AF4F /* README.md */; };
 		84C93AFA294BF02000F7AF4F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84C93AF9294BF02000F7AF4F /* .gitignore */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8478CD4F295A2557005C7FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		848F1D382942C7CF004810BC /* plantsOfKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plantsOfKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantsOfKnowledgeApp.swift; sourceTree = "<group>"; };
 		848F1D3D2942C7CF004810BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		848F1D6D2946CE44004810BC /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		848F1D6F2946D145004810BC /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		848F1D702946D145004810BC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		84ACB2B52952BD0F00F75D28 /* AddElementMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddElementMenu.swift; sourceTree = "<group>"; };
 		84C93AF4294B9ECC00F7AF4F /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		84C93AF7294BEDC400F7AF4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84C93AF9294BF02000F7AF4F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -120,7 +123,9 @@
 		848F1D3A2942C7CF004810BC /* plantsOfKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				8478CD4F295A2557005C7FE0 /* Info.plist */,
 				84C93AF4294B9ECC00F7AF4F /* example.txt */,
+				84ACB2B52952BD0F00F75D28 /* AddElementMenu.swift */,
 				848F1D6F2946D145004810BC /* Menu.swift */,
 				848F1D702946D145004810BC /* Helper.swift */,
 				848F1D6D2946CE44004810BC /* menu.json */,
@@ -310,6 +315,7 @@
 				848F1D662942DF6D004810BC /* MapView.swift in Sources */,
 				848F1D3C2942C7CF004810BC /* plantsOfKnowledgeApp.swift in Sources */,
 				848F1D6A29469E73004810BC /* listMenu.swift in Sources */,
+				84ACB2B62952BD0F00F75D28 /* AddElementMenu.swift in Sources */,
 				848F1D722946D145004810BC /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +477,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"plantsOfKnowledge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = plantsOfKnowledge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -499,6 +506,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"plantsOfKnowledge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = plantsOfKnowledge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

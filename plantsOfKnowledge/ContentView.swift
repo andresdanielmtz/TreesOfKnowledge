@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 import Foundation
 
-
 struct ContentView: View {
     let plant: String;
     let scientific_name: String;
@@ -17,7 +16,6 @@ struct ContentView: View {
     let wiki: String;
     
     var body: some View {
-        
         VStack {
             MapView()
                 .ignoresSafeArea(edges: .top)
