@@ -128,10 +128,9 @@ struct listMenu: View {
                 
                 let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 let randomString = String((0..<10).map{ _ in letters.randomElement()! })
-                let randomInt = Int.random(in: 0..<100)
 
-                let menuItem = MenuItem(id: randomString, name: randomString, photoCredit: randomString, imgUrl: randomString, scientific_name: randomString, wikipedia_entry: randomString, price: randomInt, description: randomString)
-                let json = JSON(["id": randomString, "name": randomString, "photoCredit": randomString, "imgUrl": randomString, "scientific_name": randomString, "wikipedia_entry": randomString, "price": randomInt, "description": randomString])
+                let menuItem = MenuItem(id: randomString, name: randomString, imgUrl: randomString, scientific_name: randomString, wikipedia_entry: randomString, description: randomString)
+                let json = JSON(["id": randomString, "name": randomString, "imgUrl": randomString, "scientific_name": randomString, "wikipedia_entry": randomString, "description": randomString])
                             
                 appendToJSONFile(json: json)
                 self.menuItems.addElement(element: menuItem)

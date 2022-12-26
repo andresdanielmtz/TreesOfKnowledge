@@ -18,11 +18,9 @@ struct MenuSection: Codable, Identifiable {
 struct MenuItem: Codable, Hashable, Identifiable {
     var id: String
     var name: String
-    var photoCredit: String
     var imgUrl: String;
     var scientific_name: String;
     var wikipedia_entry: String;
-    var price: Int
     var description: String
     
     var mainImage: String {
@@ -37,11 +35,9 @@ struct MenuItem: Codable, Hashable, Identifiable {
             return [
                 "id": id,
                 "name": name,
-                "photoCredit": photoCredit,
                 "imgUrl":imgUrl,
                 "scientific_name":scientific_name,
                 "wikipedia_entry":wikipedia_entry,
-                "price":price,
                 "descriptions":description,
                 "mainImage":mainImage,
                 "thumbnailImage":thumbnailImage,
@@ -49,7 +45,7 @@ struct MenuItem: Codable, Hashable, Identifiable {
         }
 
     #if DEBUG
-    static let example = MenuItem(id: "Woah", name: "Maple French Toast", photoCredit: "Joseph Gonzalez", imgUrl: "", scientific_name: "", wikipedia_entry: "", price: 6, description: "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…")
+    static let example = MenuItem(id: "Woah", name: "Maple French Toast", imgUrl: "", scientific_name: "", wikipedia_entry: "", description: "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…")
     #endif
 }
 
