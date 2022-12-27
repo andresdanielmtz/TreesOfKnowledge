@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct plantsOfKnowledgeApp: App {
     var body: some Scene {
-        WindowGroup { // where to start
+        WindowGroup {
             listMenu()
         }
     }

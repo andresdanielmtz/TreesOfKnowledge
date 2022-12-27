@@ -5,5 +5,6 @@ An iOS Mobile App made in SwiftUI, for studying and learning purposes.
 To run this project you *need* to use XCode. 
 
 **To-do List:**
-- Add QR and HTTP Request support (Priority) 
+- Clean most functions 
+- Add a button to erase all of the elements in the list
 - Finish AddElement view

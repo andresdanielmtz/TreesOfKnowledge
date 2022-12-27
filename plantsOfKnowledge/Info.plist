@@ -6,12 +6,12 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>CFBundleURLName</key>
-			<string>${BUNDLE_IDENTIFIER} </string>
+			<string>muko.plantsOfKnowledge</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>register-new-element</string>
+				<string>plantsOfKnowledge</string>
 			</array>
 		</dict>
 	</array>

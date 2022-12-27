@@ -10,36 +10,6 @@ import SwiftyJSON
 import Files
 
 
-func readMenuJson() { // Read original menu.json in the project's root folder and writes it in the NSHomeDirectory
-    let fileManager = FileManager.default
-    let documentsUrl =  fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-    let destinationUrl = documentsUrl.appendingPathComponent("menu.json")
-    if fileManager.fileExists(atPath: destinationUrl.path) {
-        print("menu.json already exists at path")
-        return
-    } else {
-        let fileURL = Bundle.main.url(forResource: "menu", withExtension: "json")
-        do {
-            let data = try Data(contentsOf: fileURL!)
-            try data.write(to: destinationUrl)
-            print("menu.json successfully copied to path")
-        } catch {
-            print("error: \(error)")
-        }
-    }
-}
-
-func appendToJSONFile(json: JSON) {
-    let path = NSHomeDirectory() + "/Documents/menu.json"
-    do {
-        let fileContents = try String(contentsOfFile: path)
-        let modifiedContents = fileContents.replacingOccurrences(of: "]", with: "\(json.rawString()!),\n]")
-        try modifiedContents.write(toFile: path, atomically: true, encoding: .utf8)
-    } catch {
-        print(error)
-    }
-}
-
 
 class Menu: ObservableObject {
     @Published var menuItems: [MenuItem] = []
@@ -94,14 +64,29 @@ class Menu: ObservableObject {
         }
 }
 
-
+func parseIDFromURL(url: URL) -> String? {
+    guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+        return nil
+    }
+    
+    for queryItem in components.queryItems ?? [] {
+        if queryItem.name == "id", let value = queryItem.value {
+            return value
+        }
+    }
+    
+    return nil
+}
 // let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
 struct listMenu: View {
+    @State private var url: URL?
+    
     @ObservedObject var menuItems = Menu()
     @State var x = 0
     init() {
         readMenuJson()
     }
+    
     var body: some View {
         NavigationStack {
             List(menuItems.menuItems, id: \.self) { menuItem in
@@ -121,8 +106,7 @@ struct listMenu: View {
             NavigationLink(destination: addElementMenu()) {
                 Text("Testing Button.")
             }
-            // .onAppear(perform: loadData)
-            
+
             Text("You have clicked this \(x) times.")
             Button("test", action: {
                 
@@ -137,6 +121,41 @@ struct listMenu: View {
                 x += 1
                 print("Button pressed.")
             })
+        }
+        .onOpenURL { url in
+            self.url = url
+            let urlString = url.absoluteString
+            let id = extractInfo(from: urlString, choice: "id")
+            let name = extractInfo(from: urlString, choice: "name")
+            
+            // https://i.imgur.com/
+            // .jpg
+            
+            let imgUrl = extractInfo(from: urlString, choice: "imgUrl")
+            let imgHost = "https://i.imgur.com/" + imgUrl! + ".jpg"
+            
+            let scientific_name = extractInfo(from: urlString, choice: "scientific_name")
+            let wikipedia_entry = extractInfo(from: urlString, choice: "wikipedia_entry")
+            let full_wikiEntry = "https://es.wikipedia.org/wiki/" + wikipedia_entry!
+            let desc = extractInfo(from: urlString, choice: "desc")
+            
+            let menuItem = MenuItem(id: id!, name: name!, imgUrl: imgHost, scientific_name: scientific_name!, wikipedia_entry: full_wikiEntry, description: desc!)
+            let json = JSON(["id": id!, "name": name!, "imgUrl": imgHost, "scientific_name": scientific_name!, "wikipedia_entry": full_wikiEntry, "description": desc!])
+            
+            appendToJSONFile(json: json)
+            self.menuItems.addElement(element: menuItem)
+            
+            print(id!)
+            print(name!)
+            print(imgHost)
+            print(scientific_name!)
+            print(full_wikiEntry)
+            
+            
+            // https://es.wikipedia.org/wiki/Parkinsonia_aculeata
+            // plantsOfKnowledge://id=92
+            // plantsofknowledge://plants?id=12?name=palo_verde?imgUrl=sKjio0I?scientific_name=acuosa?wikipedia_entry=Parkinsonia_aculeata?desc='It_works_just_fine'
+
         }
     }
     struct listMenu_Previews: PreviewProvider {
