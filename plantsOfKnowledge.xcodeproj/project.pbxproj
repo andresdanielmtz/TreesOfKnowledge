@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8478CD51295A4A6A005C7FE0 /* jsonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478CD50295A4A6A005C7FE0 /* jsonFunctions.swift */; };
+		8478CD93295C0CE9005C7FE0 /* jsonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478CD92295C0CE9005C7FE0 /* jsonFunctions.swift */; };
 		848F1D3C2942C7CF004810BC /* plantsOfKnowledgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */; };
 		848F1D3E2942C7CF004810BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F1D3D2942C7CF004810BC /* ContentView.swift */; };
 		848F1D402942C7D0004810BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848F1D3F2942C7D0004810BC /* Assets.xcassets */; };
@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		8478CD4F295A2557005C7FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8478CD50295A4A6A005C7FE0 /* jsonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonFunctions.swift; sourceTree = "<group>"; };
+		8478CD92295C0CE9005C7FE0 /* jsonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonFunctions.swift; sourceTree = "<group>"; };
 		848F1D382942C7CF004810BC /* plantsOfKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plantsOfKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantsOfKnowledgeApp.swift; sourceTree = "<group>"; };
 		848F1D3D2942C7CF004810BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,13 +123,13 @@
 		848F1D3A2942C7CF004810BC /* plantsOfKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				8478CD92295C0CE9005C7FE0 /* jsonFunctions.swift */,
 				8478CD4F295A2557005C7FE0 /* Info.plist */,
 				84C93AF4294B9ECC00F7AF4F /* example.txt */,
 				84ACB2B52952BD0F00F75D28 /* AddElementMenu.swift */,
 				848F1D6F2946D145004810BC /* Menu.swift */,
 				848F1D6D2946CE44004810BC /* menu.json */,
 				848F1D6929469E73004810BC /* listMenu.swift */,
-				8478CD50295A4A6A005C7FE0 /* jsonFunctions.swift */,
 				848F1D672942E014004810BC /* CircleImage.swift */,
 				848F1D652942DF6D004810BC /* MapView.swift */,
 				848F1D3B2942C7CF004810BC /* plantsOfKnowledgeApp.swift */,
@@ -310,12 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				848F1D3E2942C7CF004810BC /* ContentView.swift in Sources */,
+				8478CD93295C0CE9005C7FE0 /* jsonFunctions.swift in Sources */,
 				848F1D682942E014004810BC /* CircleImage.swift in Sources */,
 				848F1D712946D145004810BC /* Menu.swift in Sources */,
 				848F1D662942DF6D004810BC /* MapView.swift in Sources */,
 				848F1D3C2942C7CF004810BC /* plantsOfKnowledgeApp.swift in Sources */,
 				848F1D6A29469E73004810BC /* listMenu.swift in Sources */,
-				8478CD51295A4A6A005C7FE0 /* jsonFunctions.swift in Sources */,
 				84ACB2B62952BD0F00F75D28 /* AddElementMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
