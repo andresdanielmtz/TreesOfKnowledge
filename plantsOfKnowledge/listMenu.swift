@@ -11,11 +11,11 @@ import Files
 
 class Menu: ObservableObject {
     @Published var menuItems: [MenuItem] = []
-
+    
     init() {
         loadMenu()
     }
-
+    
     func loadMenu() {
         let fileName = "Documents/menu.json"
         let homeDirectory = NSHomeDirectory()
@@ -28,12 +28,12 @@ class Menu: ObservableObject {
         } catch {
             
             print("no menu.json found, ")
-            readMenuJson() 
+            readMenuJson()
             
         }
         print("Loading Menu...")
     }
-
+    
     
     func applicationWillTerminate(_ application: UIApplication) {
         do {
@@ -48,17 +48,17 @@ class Menu: ObservableObject {
     }
     
     func addElement(element: MenuItem) { // Add the element to the data property and update the JSON file
-            menuItems.append(element)
-            do {
-                let json: [String: Any] = ["menuItems": menuItems.map { $0.toJSON() }]
-                let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-                if let fileURL = Bundle.main.url(forResource: "menu", withExtension: "json") {
-                    try data.write(to: fileURL)
-                }
-            } catch {
-                print("Error writing to JSON file: \(error)")
+        menuItems.append(element)
+        do {
+            let json: [String: Any] = ["menuItems": menuItems.map { $0.toJSON() }]
+            let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            if let fileURL = Bundle.main.url(forResource: "menu", withExtension: "json") {
+                try data.write(to: fileURL)
             }
+        } catch {
+            print("Error writing to JSON file: \(error)")
         }
+    }
 }
 
 func parseIDFromURL(url: URL) -> String? {
@@ -75,6 +75,8 @@ func parseIDFromURL(url: URL) -> String? {
 
 struct listMenu: View {
     @State private var url: URL?
+    @State private var presentAlert: Bool = false;
+    @AppStorage("userOnboarded") var userOnboarded: Bool = false
     
     @ObservedObject var menuItems = Menu()
     init() {
@@ -88,24 +90,28 @@ struct listMenu: View {
                 {
                     Text(menuItem.name)
                 }
-            }
-            .navigationTitle("Arboles Registrados 🌳🌱")
-            .onAppear {
-                self.menuItems.loadMenu()
+                
             }
             
-            NavigationLink(destination: addElementMenu()) {
-                Text("Add Element")
+            
+            .navigationTitle("Arboles Registrados")
+            .onAppear {
+                let path = NSHomeDirectory() // Used for debugging purposes, can be removed.
+                print(path)
+                userOnboarded = true;
+                
+                self.menuItems.loadMenu() // IMPORTANT
+                
             }
 
             Button("Add Random Element", action: {
                 
                 let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 let randomString = String((0..<10).map{ _ in letters.randomElement()! })
-
+                
                 let menuItem = MenuItem(id: randomString, name: randomString, imgUrl: randomString, scientific_name: randomString, wikipedia_entry: randomString, description: randomString)
                 let json = JSON(["id": randomString, "name": randomString, "imgUrl": randomString, "scientific_name": randomString, "wikipedia_entry": randomString, "description": randomString])
-                            
+                
                 appendToJSONFile(json: json)
                 self.menuItems.addElement(element: menuItem)
                 print("Button pressed.")
@@ -119,7 +125,7 @@ struct listMenu: View {
             let scientific_name = extractInfo(from: urlString, choice: "scientific_name")!
             let wikiEntry = "https://es.wikipedia.org/wiki/" + extractInfo(from: urlString, choice: "wikipedia_entry")!
             let desc = extractInfo(from: urlString, choice: "desc")!
-
+            
             let menuItem = MenuItem(id: id, name: name, imgUrl: imgHost, scientific_name: scientific_name, wikipedia_entry: wikiEntry, description: desc)
             let json = JSON(["id": id, "name": name, "imgUrl": imgHost, "scientific_name": scientific_name, "wikipedia_entry": wikiEntry, "description": desc])
             appendToJSONFile(json: json)
@@ -130,7 +136,7 @@ struct listMenu: View {
             
             // Example ID
             // plantsofknowledge://plants?id=2231?name=letsgo?imgUrl=sKjio0I?scientific_name=acuosa?wikipedia_entry=Parkinsonia_aculeata?desc='It_works_just_fine'
-
+            
         }
         
     }

@@ -2,7 +2,7 @@
 ## A mobile app for trees, by trees. 🌲
 
 An iOS Mobile App made in SwiftUI, for studying and learning purposes. 
-To run this project you need to use [XCode](https://developer.apple.com/xcode/) or any other alternative. 
+To run this project you need to use [XCode](https://developer.apple.com/xcode/) or any other alternative. Run `plantsOfKnowledge.xcodeproj`.
 
 In this project you have a list of elements, in which you can either add an element manually (by pressing the [Add Element] button), add a random element to it or use a specific link like, for example:
 

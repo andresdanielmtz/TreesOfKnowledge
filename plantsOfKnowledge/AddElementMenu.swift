@@ -34,7 +34,7 @@ struct addElementMenu: View {
         VStack {
             // Text("Name: \(name) \n")
             // Should make like a card here...
-
+            
             TextField("Name: ", text: $name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()

@@ -24,12 +24,12 @@ struct ContentView: View {
             CircleImage(imag: imgUrl)
                 .offset(y: -130)
                 .padding(.bottom, -129.974)
-
+            
             VStack(alignment: .center) {
                 Text(plant)
                     .bold()
                     .font(.system(size: 25))
-
+                
                 Text(scientific_name)
                     .italic()
                     .padding(.bottom)
