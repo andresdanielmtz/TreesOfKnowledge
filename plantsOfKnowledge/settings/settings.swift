@@ -9,10 +9,23 @@ import SwiftUI
 
 struct settings: View {
     @AppStorage("isDarkMode") private var isDarkMode = true;
+    @AppStorage("myFontSize") private var myFontSize: Int = 20;
+    
     var body: some View {
-        HStack {
-            Toggle("Dark Mode", isOn: $isDarkMode)
+        VStack {
+            HStack {
+                Toggle("Dark Mode", isOn: $isDarkMode)
+            }
+            HStack {
+                Text("Font size")
+                Picker("Font-size", selection: $myFontSize) {
+                    ForEach(1...100, id: \.self) { number in
+                        Text("\(number)")
+                    }
+                }
+            }
         }
+        
     }
 }
 
