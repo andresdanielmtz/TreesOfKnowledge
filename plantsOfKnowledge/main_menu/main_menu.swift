@@ -17,7 +17,10 @@ struct main_menu: View {
                     .font(.system(size: 36))
                     .bold()
                 NavigationLink(destination: listMenu()) {
-                    Text("Start")
+                    Text("Start\n")
+                }
+                NavigationLink(destination: settings()) {
+                    Text("Settings\n")
                 }
             }
         }

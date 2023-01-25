@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct plantsOfKnowledgeApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some Scene {
         WindowGroup {
             main_menu()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+                
         }
     }
 }
